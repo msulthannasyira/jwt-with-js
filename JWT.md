@@ -188,9 +188,9 @@ db.connect((err) => {
 module.exports = db;
 ```
 
-7. Tahap 7: Uji Endpoint
+### 7. Uji Endpoint
 
-• Register User
+Register User
 
 Endpoint: `POST /auth/register`
 
@@ -211,7 +211,7 @@ Endpoint: `POST /auth/register`
 }
 ```
 
-• Login User
+Login User
 
 Endpoint: `POST /auth/login`
 
@@ -232,9 +232,7 @@ Endpoint: `POST /auth/login`
 }
 ```
 
-• Akses Rute Terlindungi
-
-• Endpoint: GET /protected Header:
+Akses Rute Terlindungi (Endpoint: GET /protected Header):
 
 ```makefile
 Authorization: Bearer your_generated_jwt_token
@@ -246,6 +244,15 @@ Authorization: Bearer your_generated_jwt_token
   "message": "Hello user1, you have access!"
 }
 ```
+
+• Screenshots:
+
+![image](https://github.com/user-attachments/assets/8f75095b-a300-40f1-9011-7222aa947a74)
+
+![image](https://github.com/user-attachments/assets/a52e6bb3-dbec-4b6a-be93-3b307d55c5e1)
+
+![image](https://github.com/user-attachments/assets/68cd3292-06c4-4d5e-b8e8-3c19bbce1d73)
+
 
 ## Kesimpulan
 
