@@ -1,6 +1,6 @@
 # Implementasi Autentikasi Berbasis JSON Web Token (JWT) pada Aplikasi REST API dengan ExpressJS
 
-##Pendahuluan
+## Pendahuluan
 
 Dalam pengembangan aplikasi berbasis web, autentikasi adalah salah satu komponen penting untuk melindungi data pengguna dan memastikan hanya pengguna yang berhak yang dapat mengakses fitur tertentu. Salah satu metode autentikasi yang populer adalah menggunakan JSON Web Token (JWT). JWT memungkinkan pengembang untuk mengelola sesi pengguna dengan cara yang aman, ringan, dan independen terhadap server.
 
@@ -10,29 +10,29 @@ Pada praktik ini, kita akan membangun sistem autentikasi berbasis JWT menggunaka
 
 ### 1. Registrasi Pengguna
 
-Pengguna mengisi formulir di `register.html`.
+• Pengguna mengisi formulir di `register.html`.
 
-Data dikirim ke endpoint `/auth/register`.
+• Data dikirim ke endpoint `/auth/register`.
 
 Password di-hash dan disimpan (di sini dalam array `users`).
 
 ### 2. Login Pengguna
 
-Pengguna mengisi formulir di `login.html`.
+• Pengguna mengisi formulir di `login.html`.
 
-Data dikirim ke endpoint `/auth/login`.
+• Data dikirim ke endpoint `/auth/login`.
 
 Password diverifikasi, jika cocok, token JWT dikembalikan.
 
 ### 3. Token Validasi:
 
-Middleware `authMiddleware.js` memverifikasi token pada setiap permintaan API yang membutuhkan autentikasi.
+• Middleware `authMiddleware.js` memverifikasi token pada setiap permintaan API yang membutuhkan autentikasi.
 
 ## Tahapan
 
 ### 1. Tambahkan Paket yang Dibutuhkan
 
-Instalasi dependensi yang diperlukan untuk autentikasi dan pengelolaan data:
+• Instalasi dependensi yang diperlukan untuk autentikasi dan pengelolaan data:
 
 ```bash
 npm install express jsonwebtoken bcryptjs dotenv mysql
@@ -40,13 +40,13 @@ npm install express jsonwebtoken bcryptjs dotenv mysql
 
 Dependensi tambahan:
 
-dotenv: Mengelola variabel lingkungan.
+• dotenv: Mengelola variabel lingkungan.
 
-jsonwebtoken: Membuat dan memverifikasi token JWT.
+• jsonwebtoken: Membuat dan memverifikasi token JWT.
 
-bcryptjs: Untuk hashing password.
+• bcryptjs: Untuk hashing password.
 
-mysql: Untuk koneksi database MySQL.
+• mysql: Untuk koneksi database MySQL.
 
 ### 2. Konfigurasi Variabel Lingkungan
 
@@ -60,9 +60,9 @@ DB_USER=root
 DB_NAME=nasira
 ```
 
-`JWT_SECRET`: Kunci rahasia JWT.
+• `JWT_SECRET`: Kunci rahasia JWT.
 
-`JWT_EXPIRES_IN`: Masa berlaku token JWT.
+• `JWT_EXPIRES_IN`: Masa berlaku token JWT.
 
 ### 3. Middleware untuk Autentikasi
 
@@ -190,34 +190,32 @@ module.exports = db;
 
 7. Tahap 7: Uji Endpoint
 
-Register User
+• Register User
 
 Endpoint: `POST /auth/register`
 
-Body (JSON):
+• Body (JSON)
 
 ```json
-Copy code
 {
   "username": "user1",
   "password": "password123"
 }
 ```
 
-Respons:
+• Respons
 
 ```json
-Copy code
 {
   "message": "User registered successfully!"
 }
 ```
 
-Login User
+• Login User
 
 Endpoint: `POST /auth/login`
 
-Body (JSON):
+• Body (JSON):
 
 ```json
 {
@@ -226,7 +224,7 @@ Body (JSON):
 }
 ```
 
-Respons:
+• Respons:
 
 ```json
 {
@@ -234,16 +232,15 @@ Respons:
 }
 ```
 
-Akses Rute Terlindungi
+• Akses Rute Terlindungi
 
-Endpoint: GET /protected
-Header:
+• Endpoint: GET /protected Header:
 
 ```makefile
 Authorization: Bearer your_generated_jwt_token
 ```
 
-Respons:
+• Respons:
 ```json
 {
   "message": "Hello user1, you have access!"
